@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat App</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+          integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="../socket.io/socket.io.js"></script>
+    <script src="https://momentjs.com/downloads/moment.min.js"></script>
+
+    <style>
+        body { font-family:'Roboto',sans-serif;font-size: 16px; background:#7cf7c0 ;margin: 20px;}
+        .btn {cursor: pointer;padding: 5px 15px;background: #0E5A3E;color:#FEFFFF ;border: 0;font-size: 17px;}
+        .c-container {max-width: 900px;background: #fff;margin: 50px auto;overflow: hidden;}
+        .c-header {background: #32a852;color: #fff;border-top-left-radius: 5px;border-top-right-radius: 5px;
+            padding: 15px;display: flex;align-items: center;justify-content: space-between;}
+        .c-form-container {padding: 20px 30px;background-color: #32a852;}
+        .c-form-container form {display: flex;}
+        .c-form-container input[type='text'] {font-size: 16px;padding: 5px;height: 40px;flex: 1;}
+    </style>
+</head>
+
+<body>
+<div align="right">
+    <a href="http://ec2-3-91-178-173.compute-1.amazonaws.com:8080/activity" class="btn">Go back</a>
+</div>
+<div class="c-container" >
+    <header style="background-color: #32a852"  class="c-header">
+        <h1><i class="far fa-comments"></i>Chat App</h1>
+
+    </header>
+    <ul id="messages"></ul>
+    <div class="c-form-container">
+        <form id="c-form">
+            <input id="m" type="text" placeholder="Enter Message" required autocomplete="off"/>
+            <button class="btn"><i class="fas fa-hand-pointer"></i>Send</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        const socket = io();
+        $('form').submit(function(e){
+            e.preventDefault(); // prevents page reloading
+            socket.emit('chat message', $('#m').val());
+            $('#m').val('');
+            return false;
+        });
+        socket.on('chat message', function(msg){
+            $('#messages').append($('<li>').text(msg));
+        });
+    });
+</script>
+
+</body>
+</html>

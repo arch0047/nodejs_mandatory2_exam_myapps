@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css"
+          integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="assets/stylesheet.css" />
+    <title>My App</title>
+    <script>
+        function myFunction() {
+            alert("You need to log in first to visit this page");
+        }
+    </script>
+
+    <div align="right">
+        <button onclick="myFunction()" class="btn btn-primary">Fetch Fun Data</button>
+        <button onclick="myFunction()" class="btn btn-primary">Start Chatting</button>
+    </div>
+
+</head>
+<body>
+
+<div class="container">
+    <header class="header">
+        <h1><i class="far fa-comments"></i>MY App</h1>
+    </header>
+    <main class="main">
+        <form action="auth" method="post">
+            <div class="form-control">
+                <label for="email">Email</label>
+                <input type="text" name="email" id="email" placeholder="Enter username / email" required/>
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" placeholder="Password" required/>
+            </div>
+            <button type="submit" class="btn">login</button>
+            <div align="center">
+                <br>
+                <br>
+                <a href="/signup" class="btn">Sign Up</a>
+            </div>
+        </form>
+    </main>
+</div>
+</body>
+</html>

@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+:root {
+    --dark-color-a: #32a852;
+    --dark-color-b: #526156;
+    --light-color: #0E5A3E;
+    --light-color-c:#7cf7c0;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+    --light-color-a:#FEFFFF;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    background: var(--light-color-c);
+    margin: 20px;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    cursor: pointer;
+    padding: 5px 15px;
+    background: var(--light-color);
+    color: var(--light-color-a);
+    border: 0;
+    font-size: 17px;
+}
+
+.container {
+    max-width: 500px;
+    margin: 80px auto;
+    color: #fff;
+}
+
+.header {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark-color-a);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.main {
+    padding: 30px 40px;
+    background: var(--dark-color-b);
+}
+
+.main p {
+    margin-bottom: 20px;
+}
+
+.main .form-control {
+    margin-bottom: 20px;
+}
+
+.main label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.main input[type='text'],[type='password'] {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    width: 100%;
+}
+
+.main .btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Chat Page */
+
+.c-container {
+    max-width: 1100px;
+    background: #fff;
+    margin: 30px auto;
+    overflow: hidden;
+}
+
+.c-header {
+    background: var(--dark-color-a);
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.c-main {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+}
+
+.c-sidebar {
+    background: var(--dark-color-b);
+    color: #fff;
+    padding: 10px 20px 70px;
+    overflow-y: scroll;
+}
+
+.c-sidebar h2 {
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.c-sidebar h3 {
+    margin-bottom: 15px;
+}
+
+.c-sidebar ul li {
+    padding: 10px 0;
+}
+
+.c-messages {
+    padding: 30px;
+    max-height: 500px;
+    overflow-y: scroll;
+}
+
+.c-messages .message {
+    padding: 10px;
+    margin-bottom: 15px;
+    background-color: var(--dark-color-b);
+    border-radius: 5px;
+}
+
+.c-messages .message .meta {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--light-color-a);
+    opacity: 0.7;
+    margin-bottom: 7px;
+}
+
+.c-messages .message .meta span {
+    color: #ffffff;
+}
+
+.c-form-container {
+    padding: 20px 30px;
+    background-color: var(--dark-color-a);
+}
+
+.c-form-container form {
+    display: flex;
+}
+
+.c-form-container input[type='text'] {
+    font-size: 16px;
+    padding: 5px;
+    height: 40px;
+    flex: 1;
+}
+div.container {
+    background: var(--dark-color-b);
+    align-content: center;
+}
